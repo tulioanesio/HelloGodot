@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://kmfigd42m605"]
+
+[ext_resource type="Texture2D" uid="uid://b4yxnj4rpkb7" path="res://assets/background.png" id="1_jjuxw"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_m0anc"]
+[ext_resource type="PackedScene" uid="uid://4mhko4m2gues" path="res://box.tscn" id="3_obdql"]
+[ext_resource type="PackedScene" path="res://ground.tscn" id="4_6frmt"]
+[ext_resource type="AudioStream" uid="uid://bft6pvptdd3fd" path="res://assets/music.ogg" id="5_16vvk"]
+
+[node name="World" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("4_6frmt")]
+position = Vector2(513, 634)
+scale = Vector2(1.55744, 1.0381)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 600.0
+texture = ExtResource("1_jjuxw")
+
+[node name="Box2" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(666, 550)
+
+[node name="Box3" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(951, 551)
+
+[node name="Box4" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(570, 550)
+
+[node name="Box5" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(762, 550)
+
+[node name="Box" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(666, 451)
+
+[node name="Box6" parent="." instance=ExtResource("3_obdql")]
+position = Vector2(1048, 551)
+
+[node name="Player" parent="." instance=ExtResource("2_m0anc")]
+position = Vector2(123, 133)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_16vvk")
+autoplay = true
